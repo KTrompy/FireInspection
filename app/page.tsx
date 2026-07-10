@@ -265,7 +265,7 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
