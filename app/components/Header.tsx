@@ -2,79 +2,118 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Logo from './Logo'
-
-const NAV_LINKS = [
-  { href: '/#services', label: 'Services' },
-  { href: '/#why', label: 'Why Us' },
-  { href: 'tel:+15551234567', label: 'Call' },
-]
+import Image from 'next/image'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 w-full bg-white/98 backdrop-blur-md z-50 border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex-shrink-0 hover:opacity-80 transition">
-          <Logo variant="dark" showWordmark={false} />
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-12 flex-1 justify-center">
-          <a href="/#services" className="text-navy font-medium hover:text-gold transition text-sm">
-            Services
+    <header className="w-full bg-white border-b border-gray-200">
+      {/* Top bar with phone numbers */}
+      <div className="bg-navy text-white py-2 px-6">
+        <div className="max-w-6xl mx-auto text-sm flex flex-col md:flex-row gap-4 md:gap-8">
+          <a href="tel:+15551234567" className="hover:text-accent transition">
+            📞 (555) 123-4567
           </a>
-          <a href="/#why" className="text-navy font-medium hover:text-gold transition text-sm">
-            Why Us
+          <a href="mailto:info@trojansolutions.com" className="hover:text-accent transition">
+            ✉️ info@trojansolutions.com
           </a>
-        </nav>
+          <span className="text-accent font-semibold">24/7 Emergency Support</span>
+        </div>
+      </div>
 
-        {/* CTA Button */}
-        <Link
-          href="/free-inspection"
-          className="bg-gold hover:bg-gold-light text-navy font-bold py-2 px-6 rounded-lg transition text-sm hidden md:inline-block"
-        >
-          Free Inspection
-        </Link>
+      {/* Main Navigation */}
+      <div className="py-6 px-6">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0 flex items-center gap-3">
+            <Image
+              src="/the1.png"
+              alt="Trojan Integrated Solutions"
+              width={45}
+              height={45}
+              className="rounded"
+            />
+            <div className="hidden sm:block">
+              <p className="text-lg font-bold text-navy leading-tight">Trojan</p>
+              <p className="text-xs text-gray-600">Integrated Solutions</p>
+            </div>
+          </Link>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition"
-        >
-          <div className="flex flex-col gap-1.5">
-            <span className="w-5 h-0.5 bg-navy transition" />
-            <span className="w-5 h-0.5 bg-navy transition" />
-            <span className="w-5 h-0.5 bg-navy transition" />
-          </div>
-        </button>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex gap-12 flex-1 justify-center">
+            <a href="/" className="text-navy hover:text-accent font-medium transition">
+              Home
+            </a>
+            <a href="#services" className="text-navy hover:text-accent font-medium transition">
+              Services
+            </a>
+            <a href="#products" className="text-navy hover:text-accent font-medium transition">
+              Products
+            </a>
+            <a href="/free-inspection" className="text-navy hover:text-accent font-medium transition">
+              Contact
+            </a>
+          </nav>
+
+          {/* CTA Button */}
+          <Link
+            href="/free-inspection"
+            className="hidden md:inline-block bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 transition duration-300"
+          >
+            Free Audit
+          </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden p-2 hover:bg-gray-100 rounded transition"
+          >
+            <div className="flex flex-col gap-1.5">
+              <span className="w-6 h-0.5 bg-navy transition" />
+              <span className="w-6 h-0.5 bg-navy transition" />
+              <span className="w-6 h-0.5 bg-navy transition" />
+            </div>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white px-6 py-4 flex flex-col gap-3">
+        <div className="md:hidden border-t border-gray-200 bg-white px-6 py-4 flex flex-col gap-4">
           <a
-            href="/#services"
+            href="/"
             onClick={() => setMenuOpen(false)}
-            className="text-navy hover:text-gold font-medium py-2 text-sm"
+            className="text-navy hover:text-accent font-medium py-2 transition"
+          >
+            Home
+          </a>
+          <a
+            href="#services"
+            onClick={() => setMenuOpen(false)}
+            className="text-navy hover:text-accent font-medium py-2 transition"
           >
             Services
           </a>
           <a
-            href="/#why"
+            href="#products"
             onClick={() => setMenuOpen(false)}
-            className="text-navy hover:text-gold font-medium py-2 text-sm"
+            className="text-navy hover:text-accent font-medium py-2 transition"
           >
-            Why Us
+            Products
+          </a>
+          <a
+            href="/free-inspection"
+            onClick={() => setMenuOpen(false)}
+            className="text-navy hover:text-accent font-medium py-2 transition"
+          >
+            Contact
           </a>
           <Link
             href="/free-inspection"
-            onClick={() => setMenuOpen(false)}
-            className="bg-gold text-navy font-bold py-2 px-4 rounded text-center text-sm mt-2"
+            className="bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 text-center rounded transition duration-300 mt-2"
           >
-            Free Inspection
+            Free Audit
           </Link>
         </div>
       )}
