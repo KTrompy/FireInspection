@@ -16,9 +16,9 @@ export default function Footer() {
           <div>
             <Logo variant="light" showWordmark={false} className="mb-6" />
             <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
-              SECUREGUARD
+              TROJAN INTEGRATED
               <br />
-              FIRE &amp; SECURITY
+              SOLUTIONS
             </h2>
           </div>
 
@@ -52,8 +52,8 @@ export default function Footer() {
 
             <div className="space-y-1 text-sm">
               <p>
-                <a href="mailto:info@secureguard.com" className="hover:text-gold-light transition">
-                  info@secureguard.com
+                <a href="mailto:info@trojansolutions.com" className="hover:text-gold-light transition">
+                  info@trojansolutions.com
                 </a>
               </p>
               <p>
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 text-center text-sm text-gray-500">
-          <p>&copy; 2026 SecureGuard. All rights reserved. | Licensed &amp; Insured</p>
+          <p>&copy; 2026 Trojan Integrated Solutions. All rights reserved. | Licensed &amp; Insured</p>
         </div>
       </div>
     </footer>

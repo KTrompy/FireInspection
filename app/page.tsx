@@ -88,17 +88,17 @@ const TESTIMONIALS = [
   {
     name: 'Sarah Mitchell',
     role: 'Office Manager, Tech Startup',
-    text: "SecureGuard provided the most thorough inspection we've had. Their team was professional and efficient.",
+    text: "Trojan Integrated Solutions provided the most thorough inspection we've had. Their team was professional and efficient.",
   },
   {
     name: 'James Chen',
     role: 'Owner, Retail Store',
-    text: "After SecureGuard's inspection, we fixed several issues we didn't even know we had. Best investment in safety.",
+    text: "After Trojan Integrated Solutions' inspection, we fixed several issues we didn't even know we had. Best investment in safety.",
   },
   {
     name: 'Lisa Rodriguez',
     role: 'Facilities Manager, Hospital',
-    text: "We've worked with SecureGuard for 5 years. Responsive, knowledgeable, and invaluable compliance support.",
+    text: "We've worked with Trojan Integrated Solutions for 5 years. Responsive, knowledgeable, and invaluable compliance support.",
   },
 ]
 
@@ -118,9 +118,9 @@ export default function Home() {
       <section className="relative min-h-screen w-full pt-24 blueprint-bg flex items-center">
         <div className="relative w-full max-w-7xl mx-auto px-6 py-20">
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.05] mb-8 tracking-tight">
-            SecureGuard
+            Trojan Integrated
             <br />
-            Fire &amp; Security
+            Solutions
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-10 max-w-2xl font-light">
             Certified fire safety and security specialists protecting your property, your business, and your peace of mind

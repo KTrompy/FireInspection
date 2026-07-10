@@ -23,7 +23,11 @@ export default function Logo({ variant = 'dark', className = '', showWordmark = 
       </svg>
       {showWordmark && (
         <span className={`font-bold leading-tight tracking-tight ${textColor}`}>
-          SecureGuard
+          Trojan
+          <br />
+          Integrated
+          <br />
+          Solutions
         </span>
       )}
     </div>

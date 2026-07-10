@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SecureGuard | Fire & Security Inspections",
+  title: "Trojan Integrated Solutions | Fire & Security Inspections",
   description: "Certified fire safety and security system inspections, installation, and maintenance for your property.",
 };
 
