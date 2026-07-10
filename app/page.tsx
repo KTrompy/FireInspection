@@ -1,305 +1,269 @@
 import Link from 'next/link'
 
-const CARE_CARDS = [
+const SERVICES = [
   {
-    title: 'Inspection',
-    description:
-      'Our certified technicians conduct thorough fire system inspections in compliance with NFPA codes and local fire regulations. We identify faults, assess risk, and provide detailed reports — keeping your premises safe and legally compliant.',
+    title: 'Fire Safety Inspection',
+    description: 'NFPA-compliant thorough audits identifying vulnerabilities and compliance gaps',
+    icon: '🔍',
+    duration: '2-4 hours'
   },
   {
-    title: 'Installation',
-    description:
-      'From design to commissioning, we install complete fire detection and suppression systems tailored to your facility. All installations meet UL standards and are carried out by accredited specialists with years of industry experience.',
+    title: 'System Installation',
+    description: 'Complete fire detection, suppression, and alarm systems tailored to your facility',
+    icon: '⚙️',
+    duration: 'Custom timeline'
   },
   {
-    title: 'Routine Maintenance',
-    description:
-      'Regular servicing is critical to ensuring your fire systems perform when it matters most. Our maintenance plans keep your equipment in peak condition, reduce downtime, and ensure full compliance with annual inspection requirements.',
-  },
-]
-
-const SERVICE_COLUMNS = [
-  {
-    title: 'Fire Systems',
-    items: ['Fire Detection & Alarms', 'Extinguishers & Hose Reels', 'Fire Stopping', 'Sprinkler Systems'],
-    icon: (
-      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M28 8v4M20 14l-3-3M36 14l3-3"
-          stroke="#b8934c"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-        />
-        <rect x="20" y="18" width="16" height="26" rx="3" stroke="#b8934c" strokeWidth="1.6" />
-        <path d="M24 24h8M24 30h8M24 36h5" stroke="#b8934c" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
+    title: 'Maintenance & Monitoring',
+    description: 'Ongoing service plans ensuring peak performance and regulatory compliance',
+    icon: '📊',
+    duration: 'Scheduled quarterly'
   },
   {
-    title: 'CCTV Systems',
-    items: ['CCTV', 'CCTV Recording Systems', 'Remote Monitoring'],
-    icon: (
-      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M8 28c5-9 13-14 20-14s15 5 20 14c-5 9-13 14-20 14S13 37 8 28Z"
-          stroke="#b8934c"
-          strokeWidth="1.6"
-        />
-        <circle cx="28" cy="28" r="6" stroke="#b8934c" strokeWidth="1.6" />
-        <circle cx="28" cy="28" r="1.8" fill="#b8934c" />
-      </svg>
-    ),
+    title: 'Emergency Support',
+    description: '24/7 emergency response and system troubleshooting whenever you need it',
+    icon: '📞',
+    duration: 'Always available'
   },
-  {
-    title: 'Access Control Systems',
-    items: ['Access Control Systems', 'Alarm Monitoring', 'Intercom Systems'],
-    icon: (
-      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="28" cy="19" r="2.2" fill="#b8934c" />
-        <path d="M28 26v14" stroke="#b8934c" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Gas Suppression',
-    items: ['Gas Suppression Products', 'Suppression System Design', 'Cylinder Servicing'],
-    icon: (
-      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M28 8c6 9 11 15.5 11 22.5C39 38 34 44 28 44s-11-6-11-13.5C17 23.5 22 17 28 8Z"
-          stroke="#b8934c"
-          strokeWidth="1.6"
-        />
-      </svg>
-    ),
-  },
-]
-
-const WHY_CHOOSE_US = [
-  '20+ Years of Industry Experience',
-  'Licensed & Skilled Team',
-  'End-to-End Fire & Security Solutions',
-  'Fully Compliant & Certified',
-  'Free Initial Inspection',
-  '24/7 Emergency Support',
 ]
 
 const TESTIMONIALS = [
   {
     name: 'Sarah Mitchell',
     role: 'Office Manager, Tech Startup',
-    text: "Trojan Integrated Solutions provided the most thorough inspection we've had. Their team was professional and efficient.",
+    text: "They found critical issues we didn't know existed. Professional, thorough, and they made the whole process simple.",
   },
   {
     name: 'James Chen',
     role: 'Owner, Retail Store',
-    text: "After Trojan Integrated Solutions' inspection, we fixed several issues we didn't even know we had. Best investment in safety.",
+    text: "Best investment in safety we've made. The inspection revealed exactly what we needed to prioritize.",
   },
   {
     name: 'Lisa Rodriguez',
     role: 'Facilities Manager, Hospital',
-    text: "We've worked with Trojan Integrated Solutions for 5 years. Responsive, knowledgeable, and invaluable compliance support.",
+    text: "5 years of partnership. They're responsive, knowledgeable, and our team trusts them completely.",
   },
 ]
-
-function ArrowBullet() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-      <path d="M5 5h11v11" stroke="#0f1e38" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M16 5 5 16" stroke="#0f1e38" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  )
-}
 
 export default function Home() {
   return (
     <div className="w-full bg-white">
-      {/* Hero Section */}
-      <section className="relative min-h-screen w-full pt-24 blueprint-bg flex items-center overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-10 w-96 h-96 bg-gold rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-brand-red rounded-full mix-blend-multiply filter blur-3xl"></div>
+      {/* HERO: Crystal clear value proposition */}
+      <section className="relative w-full pt-32 pb-24 px-6 bg-gradient-to-b from-navy via-navy-light to-navy overflow-hidden">
+        {/* Subtle background texture */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gold rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-red rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
-        <div className="relative w-full max-w-7xl mx-auto px-6 py-20 z-10">
-          <div className="mb-6 inline-block">
-            <span className="inline-block bg-gold/20 text-gold px-4 py-2 rounded-full text-sm font-semibold">
-              🔒 Professional Fire &amp; Security Solutions
-            </span>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6 tracking-tight">
-            Trojan Integrated
-            <br />
-            <span className="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">Solutions</span>
+        <div className="relative max-w-4xl mx-auto z-10">
+          {/* Main headline - clear intent */}
+          <h1 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+            Fire Safety Systems That Work
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl font-light leading-relaxed">
-            Certified fire safety and security specialists protecting your property, your business, and your peace of mind with industry-leading expertise and 24/7 support.
+          {/* Subheading - immediate benefit */}
+          <p className="text-xl md:text-2xl text-gold font-medium mb-8 max-w-3xl">
+            Expert inspections, installations & maintenance from certified specialists
           </p>
 
-          <div className="flex flex-wrap gap-4 mb-16">
+          {/* Supporting copy - addresses the main problem */}
+          <p className="text-lg text-gray-300 mb-12 max-w-2xl leading-relaxed">
+            Your facility needs fire safety that actually protects. We provide NFPA-compliant systems and inspections so you can focus on running your business with complete peace of mind.
+          </p>
+
+          {/* Primary CTA - unmissable */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Link
               href="/free-inspection"
-              className="group relative bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy px-8 py-4 text-lg font-bold transition transform hover:scale-105 hover:shadow-2xl rounded-lg flex items-center gap-2"
+              className="inline-flex items-center justify-center bg-gold hover:bg-gold-light text-navy font-bold text-lg py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg"
             >
-              <span>Book Your Free Inspection</span>
-              <span className="group-hover:translate-x-1 transition">→</span>
+              Schedule Free Inspection
+              <span className="ml-2">→</span>
             </Link>
             <a
               href="tel:+15551234567"
-              className="border-2 border-gold text-white px-8 py-4 text-lg font-bold hover:bg-gold hover:text-navy transition rounded-lg"
+              className="inline-flex items-center justify-center border-2 border-gold text-white hover:bg-gold/20 font-bold text-lg py-4 px-8 rounded-lg transition duration-300"
             >
-              ☎️ Call Now
+              Call: (555) 123-4567
             </a>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl">
-            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
-              <p className="text-gold text-2xl font-bold">20+</p>
-              <p className="text-gray-300 text-sm">Years Experience</p>
+          {/* Trust signals */}
+          <div className="flex flex-wrap gap-6 text-gray-300 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="text-gold text-lg">✓</span>
+              <span>Licensed & Insured</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
-              <p className="text-gold text-2xl font-bold">24/7</p>
-              <p className="text-gray-300 text-sm">Emergency Support</p>
+            <div className="flex items-center gap-2">
+              <span className="text-gold text-lg">✓</span>
+              <span>NFPA Certified</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
-              <p className="text-gold text-2xl font-bold">100%</p>
-              <p className="text-gray-300 text-sm">Certified Team</p>
+            <div className="flex items-center gap-2">
+              <span className="text-gold text-lg">✓</span>
+              <span>24/7 Emergency Support</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
-              <p className="text-gold text-2xl font-bold">FREE</p>
-              <p className="text-gray-300 text-sm">Initial Assessment</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 left-0 right-0 px-6 z-10">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-gray-300 border-t border-white/20 pt-6">
-            <p className="font-medium">✓ Licensed &amp; Insured | NFPA Certified</p>
-            <a href="tel:+15551234567" className="font-semibold text-gold hover:text-gold-light transition">
-              (555) 123-4567 &rarr;
-            </a>
           </div>
         </div>
       </section>
 
-      {/* Care cards */}
-      <section className="py-24 px-6 bg-panel">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-navy mb-4">Our Core Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive fire and security solutions tailored to your facility's unique needs</p>
+      {/* ENGAGEMENT: What we do - simple grid */}
+      <section className="py-28 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          {/* Section intro */}
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-5xl font-black text-navy mb-6">
+              Our Services
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl">
+              Comprehensive fire safety solutions that work. Everything from initial assessment to ongoing maintenance.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {CARE_CARDS.map((card, index) => (
-              <div key={card.title} className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold to-brand-red"></div>
+          {/* Service cards - clean, scannable */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {SERVICES.map((service) => (
+              <div key={service.title} className="group">
+                <div className="mb-6 text-5xl">{service.icon}</div>
+                <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-gold transition">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  {service.description}
+                </p>
+                <p className="text-xs text-gold font-semibold uppercase tracking-wider">
+                  {service.duration}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                <div className="p-8 relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-gold to-gold-light rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                    <span className="text-xl">
-                      {index === 0 && '🔍'}
-                      {index === 1 && '⚙️'}
-                      {index === 2 && '🛡️'}
-                    </span>
-                  </div>
+      {/* CONVERSION: Why choose us - authority & proof */}
+      <section className="py-28 px-6 bg-panel">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Stats and credentials */}
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black text-navy mb-8 leading-tight">
+                20+ Years of Protecting Your Assets
+              </h2>
 
-                  <h3 className="text-2xl font-bold text-navy mb-4">{card.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{card.description}</p>
+              <div className="space-y-6 mb-12">
+                <div className="pb-6 border-b border-gold/30">
+                  <p className="text-gold font-bold text-2xl mb-2">500+</p>
+                  <p className="text-gray-700">Facilities inspected & maintained across the region</p>
                 </div>
-
-                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-brand-red/5 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-24 px-6 blueprint-bg">
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Comprehensive Service Suite</h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">From fire detection to access control, we provide complete integrated solutions</p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            {SERVICE_COLUMNS.map((col) => (
-              <div key={col.title} className="group bg-gradient-to-br from-navy-light to-navy-lighter p-8 rounded-xl border border-gold/20 hover:border-gold/60 transition hover:shadow-2xl hover:shadow-gold/20">
-                <div className="mb-6 group-hover:scale-110 group-hover:text-gold transition duration-300">{col.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-gold transition">{col.title}</h3>
-                <ul className="space-y-3">
-                  {col.items.map((item) => (
-                    <li key={item} className="text-gray-300 text-sm flex items-start gap-2">
-                      <span className="text-gold mt-1 flex-shrink-0">→</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section id="why" className="py-24 px-6 bg-panel relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gold/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-navy mb-4">Why Choose Trojan?</h2>
-            <p className="text-gray-600 text-lg">Industry-leading expertise and commitment to your safety</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {WHY_CHOOSE_US.map((item) => (
-              <div key={item} className="group flex items-start gap-4 p-6 bg-white rounded-lg border-2 border-transparent hover:border-gold transition shadow-md hover:shadow-lg">
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-gold to-gold-light rounded-lg flex items-center justify-center group-hover:scale-110 transition">
-                  <span className="text-navy font-bold">✓</span>
+                <div className="pb-6 border-b border-gold/30">
+                  <p className="text-gold font-bold text-2xl mb-2">100%</p>
+                  <p className="text-gray-700">Certified team with continuous industry training</p>
                 </div>
                 <div>
-                  <p className="text-lg font-semibold text-navy">{item}</p>
+                  <p className="text-gold font-bold text-2xl mb-2">24/7</p>
+                  <p className="text-gray-700">Emergency response available whenever you need us</p>
                 </div>
               </div>
-            ))}
+
+              <Link
+                href="/free-inspection"
+                className="inline-flex items-center text-gold hover:text-gold-light font-bold text-lg transition"
+              >
+                Schedule your free assessment
+                <span className="ml-2">→</span>
+              </Link>
+            </div>
+
+            {/* Right: Trust factors */}
+            <div className="space-y-6">
+              <div className="bg-white p-8 rounded-lg border-l-4 border-gold shadow-sm">
+                <p className="font-bold text-navy text-lg mb-2">NFPA Certified</p>
+                <p className="text-gray-600 text-sm">All inspections meet National Fire Protection Association standards</p>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg border-l-4 border-gold shadow-sm">
+                <p className="font-bold text-navy text-lg mb-2">Compliance Guaranteed</p>
+                <p className="text-gray-600 text-sm">We keep you compliant with all federal, state, and local fire codes</p>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg border-l-4 border-gold shadow-sm">
+                <p className="font-bold text-navy text-lg mb-2">Detailed Reporting</p>
+                <p className="text-gray-600 text-sm">Clear, actionable reports that help you prioritize improvements</p>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg border-l-4 border-gold shadow-sm">
+                <p className="font-bold text-navy text-lg mb-2">Ongoing Support</p>
+                <p className="text-gray-600 text-sm">Regular maintenance plans keep your systems working perfectly</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="contact" className="py-24 px-6 blueprint-bg">
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Trusted by Industry Leaders</h2>
-            <p className="text-gray-300 text-lg">See what our clients have to say</p>
-          </div>
+      {/* SOCIAL PROOF: Testimonials - real voices */}
+      <section className="py-28 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black text-navy mb-4 text-center">
+            Trusted by Industry Leaders
+          </h2>
+          <p className="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">
+            Real results from real clients across different industries
+          </p>
 
           <div className="grid md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((testimonial) => (
-              <div key={testimonial.name} className="group relative bg-gradient-to-br from-navy-light/80 to-navy-lighter/80 backdrop-blur-sm p-8 rounded-xl border border-gold/30 hover:border-gold/60 transition hover:shadow-2xl hover:shadow-gold/20">
+              <div key={testimonial.name} className="bg-panel p-8 rounded-lg border border-gray-200">
+                {/* Stars */}
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-gold text-lg">
-                      ★
-                    </span>
+                    <span key={i} className="text-gold text-lg">★</span>
                   ))}
                 </div>
-                <p className="text-gray-200 mb-8 italic leading-relaxed text-lg">&ldquo;{testimonial.text}&rdquo;</p>
-                <div className="flex items-start gap-3 pt-6 border-t border-white/10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-gold to-gold-light rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-navy font-bold text-lg">{testimonial.name.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <p className="font-bold text-white text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-gray-400">{testimonial.role}</p>
-                  </div>
+
+                {/* Quote */}
+                <p className="text-gray-800 mb-6 leading-relaxed italic text-lg">
+                  "{testimonial.text}"
+                </p>
+
+                {/* Attribution */}
+                <div>
+                  <p className="font-bold text-navy">{testimonial.name}</p>
+                  <p className="text-sm text-gray-600">{testimonial.role}</p>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA: Make the ask clear */}
+      <section className="py-28 px-6 bg-gradient-to-b from-navy-light to-navy">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            Ready to Protect Your Facility?
+          </h2>
+          <p className="text-xl text-gold mb-10 max-w-2xl mx-auto">
+            Get a free, no-obligation inspection from our certified specialists
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <Link
+              href="/free-inspection"
+              className="inline-flex items-center justify-center bg-gold hover:bg-gold-light text-navy font-bold text-lg py-5 px-10 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Schedule Inspection Now
+            </Link>
+            <a
+              href="tel:+15551234567"
+              className="inline-flex items-center justify-center border-2 border-gold text-white hover:bg-gold/20 font-bold text-lg py-5 px-10 rounded-lg transition duration-300"
+            >
+              Call: (555) 123-4567
+            </a>
+          </div>
+
+          <p className="text-gray-400 text-sm">
+            No credit card required. 15-minute call to discuss your needs.
+          </p>
         </div>
       </section>
     </div>
