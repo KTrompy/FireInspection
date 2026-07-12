@@ -69,52 +69,35 @@ export default function FreeInspectionPage() {
 
   return (
     <div className="w-full bg-panel">
-      <section className="blueprint-bg pt-32 pb-16 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-10 w-96 h-96 bg-gold rounded-full mix-blend-multiply filter blur-3xl"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="mb-6 inline-block">
-            <span className="inline-block bg-gold/20 text-gold px-4 py-2 rounded-full text-sm font-semibold">
-              ✓ 100% Free - No Obligation
-            </span>
-          </div>
-
-          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-4">
-            Your FREE Fire &amp;
+      <section className="blueprint-bg pt-32 pb-16 px-6">
+        <div className="max-w-4xl mx-auto text-center relative">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+            BOOK YOUR FREE FIRE
             <br />
-            <span className="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">Security Audit</span>
+            SYSTEM AUDIT
           </h1>
-
-          <p className="text-gray-200 mt-6 text-lg max-w-2xl mx-auto leading-relaxed">
-            Fill in your details below and one of our certified specialists will contact you to schedule your complimentary comprehensive fire &amp; security system inspection—completely free, with no obligation.
+          <p className="text-gray-300 mt-6 text-lg max-w-2xl mx-auto">
+            Fill in your details below and one of our certified specialists will be in touch to
+            schedule your complimentary fire &amp; security system inspection.
           </p>
         </div>
       </section>
 
       <section className="px-6 py-16">
-        <div className="max-w-3xl mx-auto bg-white shadow-2xl rounded-2xl p-8 md:p-12 border-t-4 border-gold">
+        <div className="max-w-3xl mx-auto bg-white shadow-lg p-8 md:p-12">
           {submitted && (
-            <div className="mb-6 p-6 bg-green-50 border-2 border-green-400 text-green-700 rounded-lg font-semibold flex items-center gap-3">
-              <span className="text-2xl">✓</span>
-              <div>
-                <p className="font-bold">Request submitted successfully!</p>
-                <p className="text-sm">We&apos;ll contact you shortly to confirm your appointment.</p>
-              </div>
+            <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700">
+              Request submitted successfully! We&apos;ll contact you shortly.
             </div>
           )}
 
           {error && (
-            <div className="mb-6 p-6 bg-red-50 border-2 border-red-400 text-red-700 rounded-lg font-semibold">{error}</div>
+            <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700">{error}</div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-navy mb-6 flex items-center gap-2">
-                <span className="text-gold text-3xl">📋</span>
-                Your Information
-              </h2>
+              <h2 className="text-2xl font-semibold text-navy mb-4">Your Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">First name *</label>
@@ -166,10 +149,7 @@ export default function FreeInspectionPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-navy mb-6 flex items-center gap-2">
-                <span className="text-gold text-3xl">📍</span>
-                Property Address
-              </h2>
+              <h2 className="text-2xl font-semibold text-navy mb-4">Property Address</h2>
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Street Address *</label>
                 <input
@@ -220,10 +200,7 @@ export default function FreeInspectionPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-navy mb-6 flex items-center gap-2">
-                <span className="text-gold text-3xl">🔍</span>
-                Inspection Details
-              </h2>
+              <h2 className="text-2xl font-semibold text-navy mb-4">Inspection Details</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Inspection Type *</label>
@@ -264,9 +241,9 @@ export default function FreeInspectionPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-gold to-gold-light hover:shadow-2xl disabled:bg-gray-400 text-navy font-bold py-4 text-lg transition rounded-lg transform hover:scale-105 disabled:cursor-not-allowed"
+              className="w-full bg-gold hover:bg-gold-light disabled:bg-gray-400 text-navy font-bold py-4 text-lg transition"
             >
-              {loading ? '⏳ Submitting...' : '✓ Book My Free Inspection'}
+              {loading ? 'Submitting...' : 'Book My Free Inspection'}
             </button>
 
             <p className="text-sm text-gray-600 text-center">* Required fields</p>
@@ -276,3 +253,4 @@ export default function FreeInspectionPage() {
     </div>
   )
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
